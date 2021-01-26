@@ -9,12 +9,12 @@ st.sidebar.title('Filtros')
 unique_search = ['Time', 'Posição', 'Jogador', 'Season']
 selected_pos = st.sidebar.selectbox('Pesquisa Por', unique_search)
 
-if selected_pos == ['Time']:
+if selected_pos == 'Time':
     # Sidebar - Times
     sorted_unique_team = sorted(nba_game.get_teams())
     selected_team = st.sidebar.multiselect('Times', sorted_unique_team, sorted_unique_team)
 
-if selected_pos == ['Posição']:
+if selected_pos == 'Posição':
     # Sidebar - Posição
     unique_pos = ['Center (C)','Power Forward (PF)','Small Forward (SF)','Point Guard (PG)','Shooting Guard (SG)']
     selected_pos = st.sidebar.multiselect('Position', unique_pos, unique_pos)
@@ -22,7 +22,7 @@ if selected_pos == ['Posição']:
 #To Do:
 # nba_api disponibiliza uma function SeasonAll, 
 # tentar adicionar ela como dataframe, usar no range na lista de season ao invez de fixo.
-if selected_pos == ['Season']:
+if selected_pos == 'Season':
     list_season =  list(reversed(range(1950, 2022)))
     selected_year = st.sidebar.selectbox('Ano', list_season)
 
